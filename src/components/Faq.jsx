@@ -165,6 +165,19 @@ const Faq = () => {
               </a>
             </div>
           </div>
+          <div className='collapse collapse-arrow join-item border border-base-300'>
+            <input type='checkbox' />
+            <div className='collapse-title text-xl font-medium'>
+              Mes données sont-elles stockées sur le site ?
+            </div>
+            <div className='collapse-content text-zinc-600'>
+              <p>
+                Non, vos données sont traitées en temps réel et ne sont pas
+                stockées sur le serveur. Toutes les opérations sont éphémères et
+                supprimées immédiatement après le traitement.
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
