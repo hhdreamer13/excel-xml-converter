@@ -1,10 +1,13 @@
 import Image from "next/image";
+import screenshot from "./qcm.jpg";
 
 /* eslint-disable react/no-unescaped-entities */
 const Faq = () => {
   return (
     <div className='flex flex-col'>
-      <h2 className='font-bold text-xl m-4'>Foire Aux Questions</h2>
+      <h2 className='font-semibold text-xl m-4 underline'>
+        Foire Aux Questions
+      </h2>
       <div className='join join-vertical w-full'>
         <div className='collapse collapse-arrow join-item border border-base-300'>
           <input type='checkbox' />
@@ -138,8 +141,8 @@ const Faq = () => {
               </p>
               <ul className='flex flex-col gap-3 mb-4 rounded-none'>
                 <li className='border-b'>
-                  <strong>question:</strong> Quel Etat n'a pas adhéré à l'Union
-                  européen en 2004 ?
+                  <span className='font-bold block'>question:</span> Quel Etat
+                  n'a pas adhéré à l'Union européen en 2004 ?
                 </li>
                 <li className='border-b'>
                   <span className='font-bold'>reponseA :</span> Estonie
@@ -154,9 +157,9 @@ const Faq = () => {
                   <span className='font-bold'>bonneReponse (A, B ou C):</span> B
                 </li>
               </ul>
-              <a href='/qcm.jpg' target='_blank' rel='noopener noreferrer'>
+              <a href='./qcm.jpg' target='_blank' rel='noopener noreferrer'>
                 <Image
-                  src='/qcm.jpg'
+                  src={screenshot}
                   alt='Exemple de fichier Excel rempli'
                   className='mb-3'
                   width={600}
