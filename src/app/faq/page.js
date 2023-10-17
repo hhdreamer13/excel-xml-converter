@@ -21,7 +21,7 @@ export default function Home() {
       <div className='w-full text-left lg:max-w-5xl lg:w-full'>
         <Link
           href='/'
-          className='btn border border-gray-300 hover:border-gray-400'
+          className='btn border border-gray-300 hover:border-gray-400 dark:bg-gray-600 dark:hover:bg-gray-700'
         >
           <Image
             src='/return.svg'

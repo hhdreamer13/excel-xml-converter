@@ -157,7 +157,7 @@ const Faq = () => {
               </ul>
               <a href='/qcm.jpg' target='_blank' rel='noopener noreferrer'>
                 <Image
-                  src={screenshot}
+                  src='/qcm.jpg'
                   alt='Exemple de fichier Excel rempli'
                   className='mb-3'
                   width={600}
