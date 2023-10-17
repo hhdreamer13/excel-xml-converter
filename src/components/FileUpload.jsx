@@ -14,14 +14,12 @@ const FileUpload = ({ file, setFile, setConvertedFile, setErrorMessage }) => {
   return (
     <div className='relative form-control w-full max-w-xs'>
       <label className='label'>
-        <span className='label-text text-sm'>
-          Sélectionnez un fichier Excel
-        </span>
+        <span className='label-text'>Sélectionnez un fichier Excel</span>
         <span className='label-text-alt'></span>
       </label>
       <input
         type='file'
-        className='file-input file-input-bordered w-full max-w-xs normal-case'
+        className='file-input file-input-bordered w-full max-w-xs text-xs normal-case'
         id='file-upload'
         accept='.xlsx'
         onChange={handleFileChange}
