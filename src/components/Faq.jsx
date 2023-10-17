@@ -1,5 +1,4 @@
 import Image from "next/image";
-import screenshot from "../../public/qcm.jpg";
 
 /* eslint-disable react/no-unescaped-entities */
 const Faq = () => {
