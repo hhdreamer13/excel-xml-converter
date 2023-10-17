@@ -5,7 +5,7 @@ import Link from "next/link";
 
 export default function Home() {
   return (
-    <main className='flex min-h-screen flex-col items-center p-0 sm:p-10'>
+    <main className='flex min-h-screen flex-col items-center justify-between p-0 sm:p-10'>
       <div className='max-w-5xl items-center justify-center w-fit mb-20'>
         <h1 className='left-0 top-0 flex w-full justify-center font-bold text-2xl sm:text-5xl font-literata rounded-lg pb-6 pt-8 dark:from-inherit lg:w-auto lg:p-4'>
           Excel à Moodle XML
@@ -19,8 +19,10 @@ export default function Home() {
           votre fichier Moodle XML.
         </p>
       </div>
-      <ConverterDisplay />
-      <div className='mb-14 flex text-left mx-auto justify-center items-start gap-2 w-80 sm:max-w-5xl sm:w-full'>
+      <div>
+        <ConverterDisplay />
+      </div>
+      <div className='mb-20 flex text-left mx-auto justify-center items-start gap-2 w-80 sm:max-w-5xl sm:w-full'>
         <a
           href='/qcm_modele.xlsx'
           className='group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800 hover:dark:bg-opacity-30'
@@ -71,7 +73,9 @@ export default function Home() {
           </p>
         </a>
       </div>
-      <Footer />
+      <div>
+        <Footer />
+      </div>
     </main>
   );
 }
