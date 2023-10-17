@@ -42,7 +42,7 @@ def lire_fichier_excel(chemin):
                 'B': str(row['reponseB']),
                 'C': str(row['reponseC']),
             },
-            'bonneReponse': str(row['bonneReponse']),
+            'bonneReponse': str(row['bonneReponse (A, B ou C)']),
         }
         questions.append(question)
 
