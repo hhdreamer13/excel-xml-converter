@@ -17,7 +17,7 @@ const literataFont = Expletus_Sans({
 });
 
 export const metadata = {
-  title: "Convertisseur de fichier Excel à Moodle XML",
+  title: "Excel à Moodle XML",
   description: "Créé par Hooman",
 };
 
