@@ -7,6 +7,7 @@ import DownloadLink from "./DownloadLink";
 
 const ConverterDisplay = () => {
   const [file, setFile] = useState(null);
+  const [isLoading, setIsLoading] = useState(false);
   const [convertedFile, setConvertedFile] = useState(null);
   return (
     <div
@@ -14,13 +15,23 @@ const ConverterDisplay = () => {
       style={{ gridTemplateRows: "1fr 1fr 1fr" }}
     >
       <div className='w-full'>
-        <FileUpload setFile={setFile} />
+        <FileUpload
+          file={file}
+          setFile={setFile}
+          setConvertedFile={setConvertedFile}
+        />
       </div>
       <div className='w-full'>
-        <ConvertButton file={file} setConvertedFile={setConvertedFile} />
+        <ConvertButton
+          file={file}
+          setConvertedFile={setConvertedFile}
+          setIsLoading={setIsLoading}
+        />
       </div>
       <div className='w-full'>
-        {convertedFile ? (
+        {isLoading ? (
+          <span className='loading loading-dots loading-lg'></span>
+        ) : convertedFile ? (
           <DownloadLink convertedFile={convertedFile} />
         ) : (
           <div className='placeholder'></div>

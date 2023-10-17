@@ -4,8 +4,8 @@ const DownloadLink = ({ convertedFile }) => {
     return (
       <a
         href={url}
-        download='converted.xml'
-        className='link link-info normal-case'
+        download='fichier_converti.xml'
+        className='btn btn-link text-lg normal-case'
       >
         Télécharger le fichier converti
       </a>

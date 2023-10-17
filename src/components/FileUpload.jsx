@@ -1,11 +1,17 @@
-const FileUpload = ({ setFile }) => {
+const FileUpload = ({ file, setFile, setConvertedFile }) => {
   const handleFileChange = (e) => {
     const file = e.target.files[0];
     setFile(file);
   };
 
+  const clearFile = () => {
+    document.getElementById("file-upload").value = null;
+    setFile(null);
+    setConvertedFile(null);
+  };
+
   return (
-    <div className='form-control w-full max-w-xs'>
+    <div className='relative form-control w-full max-w-xs'>
       <label className='label'>
         <span className='label-text'>Sélectionnez un fichier</span>
         <span className='label-text-alt'></span>
@@ -17,6 +23,28 @@ const FileUpload = ({ setFile }) => {
         accept='.xlsx'
         onChange={handleFileChange}
       />
+      {file ? (
+        <button
+          className='badge badge-outline text-xs gap-2 absolute top-0 right-0'
+          onClick={clearFile}
+        >
+          <svg
+            xmlns='http://www.w3.org/2000/svg'
+            fill='none'
+            viewBox='0 0 24 24'
+            className='inline-block w-4 h-4 stroke-current'
+          >
+            <path
+              strokeLinecap='round'
+              strokeLinejoin='round'
+              strokeWidth='2'
+              d='M6 18L18 6M6 6l12 12'
+            ></path>
+          </svg>
+          Effacer
+        </button>
+      ) : null}
+
       <label className='label'>
         <span className='label-text-alt'></span>
         <span className='label-text-alt'></span>
