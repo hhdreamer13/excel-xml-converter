@@ -15,14 +15,15 @@ const ConverterDisplay = () => {
       className='grid grid-rows-3 gap-3 text-center'
       style={{ gridTemplateRows: "1fr 1fr 1fr" }}
     >
-      <div className='w-full'>
+      <div className='w-fit mx-auto'>
         <FileUpload
           file={file}
           setFile={setFile}
           setConvertedFile={setConvertedFile}
+          setErrorMessage={setErrorMessage}
         />
       </div>
-      <div className='w-full'>
+      <div className='w-fit mx-auto'>
         <ConvertButton
           file={file}
           setConvertedFile={setConvertedFile}
@@ -30,11 +31,11 @@ const ConverterDisplay = () => {
           setErrorMessage={setErrorMessage}
         />
       </div>
-      <div className='w-full'>
+      <div className='w-fit mx-auto'>
         {isLoading ? (
           <span className='loading loading-dots loading-lg'></span>
         ) : errorMessage ? (
-          <div className='text-red-500'>{errorMessage}</div>
+          <div className='text-red-500 w-96 mx-auto'>{errorMessage}</div>
         ) : convertedFile ? (
           <DownloadLink convertedFile={convertedFile} />
         ) : (

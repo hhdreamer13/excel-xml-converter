@@ -23,7 +23,7 @@ def convert():
 
             return send_file(mem, as_attachment=True, download_name='FichierConverti.xml', mimetype='application/xml')
         except Exception as e:  # Replace with more specific exceptions if possible
-            return jsonify({'error': 'Format de fichier Excel invalide.', 'details': str(e)}), 400
+            return jsonify({'error': "Format Excel invalide. Utilisez le modèle du site et consultez la FAQ, puis réessayez.", 'details': str(e)}), 400
     else:
         return jsonify({'error': 'Aucun fichier téléversé'}), 400
 

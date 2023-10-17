@@ -1,4 +1,4 @@
-import { Inter, Caveat, Literata } from "next/font/google";
+import { Inter, Caveat, Expletus_Sans } from "next/font/google";
 
 import "./globals.css";
 
@@ -10,7 +10,7 @@ const caveatFont = Caveat({
   variable: "--font-caveat",
 });
 
-const literataFont = Literata({
+const literataFont = Expletus_Sans({
   subsets: ["latin"],
   display: "swap",
   variable: "--font-literata",

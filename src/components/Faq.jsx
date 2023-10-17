@@ -11,7 +11,7 @@ const Faq = () => {
           <div className='collapse-title text-xl font-medium'>
             Qu'est-ce que ce site fait ?
           </div>
-          <div className='collapse-content'>
+          <div className='collapse-content text-zinc-600'>
             <p>
               Cette web app convertit vos fichiers Excel contenant des questions
               à choix multiples (QCM) en fichiers XML compatibles avec Moodle.
@@ -24,7 +24,7 @@ const Faq = () => {
           <div className='collapse-title text-xl font-medium'>
             Comment ça marche ?
           </div>
-          <div className='collapse-content'>
+          <div className='collapse-content text-zinc-600'>
             <ol className='list-decimal	ml-4 flex flex-col gap-3'>
               <li>
                 <span className='font-bold block'>
@@ -70,7 +70,7 @@ const Faq = () => {
           <div className='collapse-title text-xl font-medium'>
             J'ai déjà un QCM sur Word/PDF. Que devrais-je faire ?
           </div>
-          <div className='collapse-content'>
+          <div className='collapse-content text-zinc-600'>
             <p>
               Si vous avez déjà un QCM dans un format autre qu'Excel, il
               faudrait copier-coller les questions et les réponses dans le{" "}
@@ -90,7 +90,7 @@ const Faq = () => {
           <div className='collapse-title text-xl font-medium'>
             Y a-t-il des limitations à connaître ?
           </div>
-          <div className='collapse-content'>
+          <div className='collapse-content text-zinc-600'>
             <p>
               Pour le moment, ce service ne convertit que des QCM avec
               exactement{" "}
@@ -105,7 +105,7 @@ const Faq = () => {
           <div className='collapse-title text-xl font-medium'>
             Y a-t-il des consignes spéciales pour remplir le modèle Excel ?
           </div>
-          <div className='collapse-content'>
+          <div className='collapse-content text-zinc-600'>
             <p className='mb-3'>Oui, veuillez suivre ces règles :</p>
             <ul className='list-disc ml-4 flex flex-col gap-3'>
               <li>
@@ -131,7 +131,7 @@ const Faq = () => {
             <div className='collapse-title text-xl font-medium'>
               Est-ce que je peux voir un exemple de fichier Excel rempli ?
             </div>
-            <div className='collapse-content'>
+            <div className='collapse-content text-zinc-600'>
               <p className='mb-4'>
                 Voici un exemple de comment les colonnes pourraient être
                 remplies :

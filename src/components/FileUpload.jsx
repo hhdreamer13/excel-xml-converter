@@ -1,4 +1,4 @@
-const FileUpload = ({ file, setFile, setConvertedFile }) => {
+const FileUpload = ({ file, setFile, setConvertedFile, setErrorMessage }) => {
   const handleFileChange = (e) => {
     const file = e.target.files[0];
     setFile(file);
@@ -8,6 +8,7 @@ const FileUpload = ({ file, setFile, setConvertedFile }) => {
     document.getElementById("file-upload").value = null;
     setFile(null);
     setConvertedFile(null);
+    setErrorMessage(null);
   };
 
   return (

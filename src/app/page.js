@@ -5,10 +5,18 @@ import Link from "next/link";
 
 export default function Home() {
   return (
-    <main className='flex min-h-screen flex-col items-center p-20'>
-      <div className='z-10 max-w-5xl items-center justify-center font-bold font-literata text-2xl w-fit mb-20'>
-        <p className='fixed left-0 top-0 flex w-full justify-center bg-gradient-to-b rounded-lg from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:from-inherit lg:static lg:w-auto lg:p-4'>
-          Convertisseur de fichier Excel à Moodle XML
+    <main className='flex min-h-screen flex-col items-center p-10'>
+      <div className='z-10 max-w-5xl items-center justify-center w-fit mb-20'>
+        <h1 className='fixed left-0 top-0 flex w-full justify-center font-bold text-5xl font-literata rounded-lg pb-6 pt-8 backdrop-blur-2xl dark:from-inherit lg:static lg:w-auto lg:p-4'>
+          Excel à Moodle XML
+        </h1>
+        <p className='w-[30rem] mx-auto text-center font-semibold'>
+          Bienvenue sur le convertisseur Excel à Moodle XML (QCM) !
+        </p>
+        <p className='w-2/3 mx-auto text-center text-zinc-600'>
+          Commencez par télécharger le modèle Excel ci-dessous, remplissez-le
+          avec vos questions et réponses, puis téléversez-le ici pour obtenir
+          votre fichier Moodle XML.
         </p>
       </div>
       <ConverterDisplay />
