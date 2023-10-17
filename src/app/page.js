@@ -11,7 +11,7 @@ export default function Home() {
           Excel à Moodle XML
         </h1>
         <p className='w-[30rem] mx-auto text-center font-semibold'>
-          Bienvenue sur le convertisseur Excel à Moodle XML (QCM) !
+          Bienvenue sur le convertisseur Excel à Moodle XML (QCM)
         </p>
         <p className='w-2/3 mx-auto text-center text-zinc-600'>
           Commencez par télécharger le modèle Excel ci-dessous, remplissez-le
