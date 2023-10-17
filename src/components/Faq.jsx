@@ -139,8 +139,8 @@ const Faq = () => {
               </p>
               <ul className='flex flex-col gap-3 mb-4 rounded-none'>
                 <li className='border-b'>
-                  <span className='font-bold'>question:</span> Quel Etat n'a pas
-                  adhéré à l'Union européen en 2004 ?
+                  <strong>question:</strong> Quel Etat n'a pas adhéré à l'Union
+                  européen en 2004 ?
                 </li>
                 <li className='border-b'>
                   <span className='font-bold'>reponseA :</span> Estonie

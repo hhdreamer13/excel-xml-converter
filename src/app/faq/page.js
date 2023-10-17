@@ -18,7 +18,7 @@ export default function Home() {
         </p>
       </div>
       {/* Back button */}
-      <div className='w-full text-left'>
+      <div className='w-full text-left lg:max-w-5xl lg:w-full'>
         <Link
           href='/'
           className='btn border border-gray-300 hover:border-gray-400'
