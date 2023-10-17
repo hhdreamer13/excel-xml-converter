@@ -1,6 +1,7 @@
 /* eslint-disable react/no-unescaped-entities */
 import Faq from "@/components/Faq";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Home() {
   return (
@@ -14,9 +15,15 @@ export default function Home() {
       <div className='w-full text-left'>
         <Link
           href='/'
-          className="btn border border-gray-300 hover:border-gray-400 normal-case'"
+          className='btn border border-gray-300 hover:border-gray-400'
         >
-          Retour à l'accueil
+          <Image
+            src='/return.svg'
+            alt='Retour'
+            width={20}
+            height={20}
+            className=''
+          />
         </Link>
       </div>
       <div className='mb-20 flex text-left mx-auto justify-center items-start gap-2 lg:max-w-5xl lg:w-full'>

@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 /* eslint-disable react/no-unescaped-entities */
 const Faq = () => {
   return (
@@ -123,6 +125,45 @@ const Faq = () => {
                 Indiquez la bonne réponse en majuscule (A, B, ou C).
               </li>
             </ul>
+          </div>
+          <div className='collapse collapse-arrow join-item border border-base-300'>
+            <input type='checkbox' />
+            <div className='collapse-title text-xl font-medium'>
+              Est-ce que je peux voir un exemple de fichier Excel rempli ?
+            </div>
+            <div className='collapse-content'>
+              <p className='mb-4'>
+                Voici un exemple de comment les colonnes pourraient être
+                remplies :
+              </p>
+              <ul className='flex flex-col gap-3 mb-4 rounded-none'>
+                <li className='border-b'>
+                  <span className='font-bold'>question:</span> Quel Etat n'a pas
+                  adhéré à l'Union européen en 2004 ?
+                </li>
+                <li className='border-b'>
+                  <span className='font-bold'>reponseA :</span> Estonie
+                </li>
+                <li className='border-b'>
+                  <span className='font-bold'>reponseB :</span> Roumanie
+                </li>
+                <li className='border-b'>
+                  <span className='font-bold'>reponseC :</span> Pologne
+                </li>
+                <li className='border-b'>
+                  <span className='font-bold'>bonneReponse (A, B ou C):</span> B
+                </li>
+              </ul>
+              <a href='/qcm.jpg' target='_blank' rel='noopener noreferrer'>
+                <Image
+                  src='/qcm.jpg'
+                  alt='Exemple de fichier Excel rempli'
+                  className='mb-3'
+                  width={600}
+                  height={400}
+                />
+              </a>
+            </div>
           </div>
         </div>
       </div>
