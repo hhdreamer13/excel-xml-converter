@@ -1,5 +1,5 @@
 import Image from "next/image";
-import screenshot from "/qcm.jpg";
+import screenshot from "/qcm.jpeg";
 
 /* eslint-disable react/no-unescaped-entities */
 const Faq = () => {
@@ -157,7 +157,7 @@ const Faq = () => {
                   <span className='font-bold'>bonneReponse (A, B ou C):</span> B
                 </li>
               </ul>
-              <a href='/qcm.jpg' target='_blank' rel='noopener noreferrer'>
+              <a href='/qcm.jpeg' target='_blank' rel='noopener noreferrer'>
                 <Image
                   src={screenshot}
                   alt='Exemple de fichier Excel rempli'
