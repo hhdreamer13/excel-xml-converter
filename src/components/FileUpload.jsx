@@ -19,7 +19,7 @@ const FileUpload = ({ file, setFile, setConvertedFile, setErrorMessage }) => {
       </label>
       <input
         type='file'
-        className='file-input file-input-bordered w-full max-w-xs text-xs normal-case'
+        className='file-input file-input-bordered w-full max-w-xs normal-case'
         id='file-upload'
         accept='.xlsx'
         onChange={handleFileChange}
