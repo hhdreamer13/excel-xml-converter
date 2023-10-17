@@ -13,7 +13,7 @@ const Faq = () => {
           <div className='collapse-title text-xl font-medium'>
             Qu'est-ce que ce site fait ?
           </div>
-          <div className='collapse-content text-zinc-600'>
+          <div className='collapse-content opacity-60'>
             <p>
               Cette web app convertit vos fichiers Excel contenant des questions
               à choix multiples (QCM) en fichiers XML compatibles avec Moodle.
@@ -26,7 +26,7 @@ const Faq = () => {
           <div className='collapse-title text-xl font-medium'>
             Comment ça marche ?
           </div>
-          <div className='collapse-content text-zinc-600'>
+          <div className='collapse-content opacity-60'>
             <ol className='list-decimal	ml-4 flex flex-col gap-3'>
               <li>
                 <span className='font-bold block'>
@@ -72,7 +72,7 @@ const Faq = () => {
           <div className='collapse-title text-xl font-medium'>
             J'ai déjà un QCM sur Word/PDF. Que devrais-je faire ?
           </div>
-          <div className='collapse-content text-zinc-600'>
+          <div className='collapse-content opacity-60'>
             <p>
               Si vous avez déjà un QCM dans un format autre qu'Excel, il
               faudrait copier-coller les questions et les réponses dans le{" "}
@@ -81,7 +81,7 @@ const Faq = () => {
                 download
                 className='text-green-600 hover:text-green-500'
               >
-                modèle Excel
+                modèle&nbsp;Excel
               </a>
               .
             </p>
@@ -92,7 +92,7 @@ const Faq = () => {
           <div className='collapse-title text-xl font-medium'>
             Y a-t-il des limitations à connaître ?
           </div>
-          <div className='collapse-content text-zinc-600'>
+          <div className='collapse-content opacity-60'>
             <p>
               Pour le moment, ce service ne convertit que des QCM avec
               exactement{" "}
@@ -107,7 +107,7 @@ const Faq = () => {
           <div className='collapse-title text-xl font-medium'>
             Y a-t-il des consignes spéciales pour remplir le modèle Excel ?
           </div>
-          <div className='collapse-content text-zinc-600'>
+          <div className='collapse-content opacity-60'>
             <p className='mb-3'>Oui, veuillez suivre ces règles :</p>
             <ul className='list-disc ml-4 flex flex-col gap-3'>
               <li>
@@ -133,15 +133,15 @@ const Faq = () => {
             <div className='collapse-title text-xl font-medium'>
               Est-ce que je peux voir un exemple de fichier Excel rempli ?
             </div>
-            <div className='collapse-content text-zinc-600'>
-              <p className='mb-4'>
+            <div className='collapse-content'>
+              <p className='mb-4 opacity-60'>
                 Voici un exemple de comment les colonnes pourraient être
                 remplies :
               </p>
-              <ul className='flex flex-col gap-3 mb-4 rounded-none'>
+              <ul className='flex flex-col gap-3 mb-4 rounded-none opacity-60'>
                 <li className='border-b'>
-                  <span className='font-bold block'>question:</span> Quel Etat
-                  n'a pas adhéré à l'Union européen en 2004 ?
+                  <span className='font-bold'>question:</span> Quel Etat n'a pas
+                  adhéré à l'Union européen en 2004 ?
                 </li>
                 <li className='border-b'>
                   <span className='font-bold'>reponseA :</span> Estonie
@@ -153,14 +153,20 @@ const Faq = () => {
                   <span className='font-bold'>reponseC :</span> Pologne
                 </li>
                 <li className='border-b'>
-                  <span className='font-bold'>bonneReponse (A, B ou C):</span> B
+                  <span className='font-bold'>bonneReponse (A, B ou C) :</span>{" "}
+                  B
                 </li>
               </ul>
-              <a href='/qcm.png' target='_blank' rel='noopener noreferrer'>
+              <a
+                href='/qcm.png'
+                target='_blank'
+                rel='noopener noreferrer'
+                className='opacity-100'
+              >
                 <Image
                   src='/qcm.png'
                   alt='Exemple de fichier Excel rempli'
-                  className='mb-3'
+                  className='mb-3 dark:opacity-60 opacity-75 hover:opacity-100 duration-300 transition-opacity'
                   width={600}
                   height={400}
                 />
@@ -172,7 +178,7 @@ const Faq = () => {
             <div className='collapse-title text-xl font-medium'>
               Mes données sont-elles stockées sur le site ?
             </div>
-            <div className='collapse-content text-zinc-600'>
+            <div className='collapse-content opacity-60'>
               <p>
                 Non, vos données sont traitées en temps réel et ne sont pas
                 stockées sur le serveur. Toutes les opérations sont éphémères et
