@@ -1,6 +1,12 @@
-const ConvertButton = ({ file, setConvertedFile, setIsLoading }) => {
+const ConvertButton = ({
+  file,
+  setConvertedFile,
+  setIsLoading,
+  setErrorMessage,
+}) => {
   const handleConvert = async () => {
     setIsLoading(true);
+    setErrorMessage(null); // Clear any existing error messages
 
     const formData = new FormData();
     formData.append("excel_file", file);
@@ -10,8 +16,14 @@ const ConvertButton = ({ file, setConvertedFile, setIsLoading }) => {
       body: formData,
     });
 
-    const blob = await response.blob();
-    setConvertedFile(blob);
+    if (response.ok) {
+      const blob = await response.blob();
+      setConvertedFile(blob);
+    } else {
+      const errorData = await response.json();
+      setErrorMessage(errorData.error || "An unknown error occurred");
+    }
+
     setIsLoading(false);
   };
 

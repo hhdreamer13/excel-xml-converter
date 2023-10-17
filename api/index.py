@@ -1,4 +1,4 @@
-from flask import Flask, request, send_file
+from flask import Flask, request, send_file, jsonify
 from io import BytesIO
 import pandas as pd
 import xml.etree.ElementTree as ET
@@ -13,16 +13,19 @@ def hello():
 def convert():
     file = request.files['excel_file']
     if file:
-        questions = lire_fichier_excel(BytesIO(file.read()))
-        xml_data = creer_fichier_moodle_xml(questions)
+        try:
+            questions = lire_fichier_excel(BytesIO(file.read()))
+            xml_data = creer_fichier_moodle_xml(questions)
 
-        mem = BytesIO()
-        mem.write(xml_data)
-        mem.seek(0)
+            mem = BytesIO()
+            mem.write(xml_data)
+            mem.seek(0)
 
-        return send_file(mem, as_attachment=True, download_name='output.xml', mimetype='application/xml')
+            return send_file(mem, as_attachment=True, download_name='FichierConverti.xml', mimetype='application/xml')
+        except Exception as e:  # Replace with more specific exceptions if possible
+            return jsonify({'error': 'Format de fichier Excel invalide.', 'details': str(e)}), 400
     else:
-        return "No file uploaded", 400
+        return jsonify({'error': 'Aucun fichier téléversé'}), 400
 
     
 
