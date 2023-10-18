@@ -81,7 +81,7 @@ const Faq = () => {
                 download
                 className='text-green-600 hover:text-green-500'
               >
-                modèle&nbsp;Excel
+                modèle Excel
               </a>
               .
             </p>
