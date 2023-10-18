@@ -128,63 +128,62 @@ const Faq = () => {
               </li>
             </ul>
           </div>
-          <div className='collapse collapse-arrow join-item border border-base-300'>
-            <input type='checkbox' />
-            <div className='collapse-title text-xl font-medium'>
-              Est-ce que je peux voir un exemple de fichier Excel rempli ?
-            </div>
-            <div className='collapse-content'>
-              <p className='mb-4 opacity-60'>
-                Voici un exemple de comment les colonnes pourraient être
-                remplies :
-              </p>
-              <ul className='flex flex-col gap-3 mb-4 rounded-none opacity-60'>
-                <li className='border-b'>
-                  <span className='font-bold'>question:</span> Quel Etat n'a pas
-                  adhéré à l'Union européen en 2004 ?
-                </li>
-                <li className='border-b'>
-                  <span className='font-bold'>reponseA :</span> Estonie
-                </li>
-                <li className='border-b'>
-                  <span className='font-bold'>reponseB :</span> Roumanie
-                </li>
-                <li className='border-b'>
-                  <span className='font-bold'>reponseC :</span> Pologne
-                </li>
-                <li className='border-b'>
-                  <span className='font-bold'>bonneReponse (A, B ou C) :</span>{" "}
-                  B
-                </li>
-              </ul>
-              <a
-                href='/qcm.png'
-                target='_blank'
-                rel='noopener noreferrer'
-                className='opacity-100'
-              >
-                <Image
-                  src='/qcm.png'
-                  alt='Exemple de fichier Excel rempli'
-                  className='mb-3 dark:opacity-60 opacity-75 hover:opacity-100 duration-300 transition-opacity'
-                  width={600}
-                  height={400}
-                />
-              </a>
-            </div>
+        </div>
+        <div className='collapse collapse-arrow join-item border border-base-300'>
+          <input type='checkbox' />
+          <div className='collapse-title text-xl font-medium'>
+            Est-ce que je peux voir un exemple de fichier Excel rempli ?
           </div>
-          <div className='collapse collapse-arrow join-item border border-base-300'>
-            <input type='checkbox' />
-            <div className='collapse-title text-xl font-medium'>
-              Mes données sont-elles stockées sur le site ?
-            </div>
-            <div className='collapse-content opacity-60'>
-              <p>
-                Non, vos données sont traitées en temps réel et ne sont pas
-                stockées sur le serveur. Toutes les opérations sont éphémères et
-                supprimées immédiatement après le traitement.
-              </p>
-            </div>
+          <div className='collapse-content'>
+            <p className='mb-4 opacity-60'>
+              Voici un exemple de comment les colonnes pourraient être remplies
+              :
+            </p>
+            <ul className='flex flex-col gap-3 mb-4 opacity-60'>
+              <li className='border-b'>
+                <span className='font-bold'>question:</span> Quel Etat n'a pas
+                adhéré à l'Union européen en 2004 ?
+              </li>
+              <li className='border-b'>
+                <span className='font-bold'>reponseA :</span> Estonie
+              </li>
+              <li className='border-b'>
+                <span className='font-bold'>reponseB :</span> Roumanie
+              </li>
+              <li className='border-b'>
+                <span className='font-bold'>reponseC :</span> Pologne
+              </li>
+              <li className='border-b'>
+                <span className='font-bold'>bonneReponse (A, B ou C) :</span> B
+              </li>
+            </ul>
+            <a
+              href='/qcm.png'
+              target='_blank'
+              rel='noopener noreferrer'
+              className='opacity-100'
+            >
+              <Image
+                src='/qcm.png'
+                alt='Exemple de fichier Excel rempli'
+                className='mb-3 dark:opacity-60 opacity-75 hover:opacity-100 duration-300 transition-opacity'
+                width={600}
+                height={400}
+              />
+            </a>
+          </div>
+        </div>
+        <div className='collapse collapse-arrow join-item border border-base-300'>
+          <input type='checkbox' />
+          <div className='collapse-title text-xl font-medium'>
+            Mes données sont-elles stockées sur le site ?
+          </div>
+          <div className='collapse-content opacity-60'>
+            <p>
+              Non, vos données sont traitées en temps réel et ne sont pas
+              stockées sur le serveur. Toutes les opérations sont éphémères et
+              supprimées immédiatement après le traitement.
+            </p>
           </div>
         </div>
       </div>
