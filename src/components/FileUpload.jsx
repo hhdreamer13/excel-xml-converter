@@ -1,7 +1,15 @@
 const FileUpload = ({ file, setFile, setConvertedFile, setErrorMessage }) => {
   const handleFileChange = (e) => {
     const file = e.target.files[0];
-    setFile(file);
+    if (file) {
+      const fileExtension = file.name.split(".").pop();
+      if (fileExtension === "xlsx") {
+        setFile(file);
+      } else {
+        setErrorMessage("Veuillez télécharger un fichier Excel valide (.xlsx)");
+        clearFile();
+      }
+    }
   };
 
   const clearFile = () => {
