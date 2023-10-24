@@ -2,7 +2,7 @@ import Image from "next/image";
 
 const Footer = () => {
   return (
-    <footer className='group bottom-0 w-fit sm:w-full font-titre text-2xl font-caveat'>
+    <footer className='group bottom-0 pb-8 sm:pb-0 w-fit sm:w-full font-titre text-2xl font-caveat'>
       <div className=''>
         <a href='https://www.hhdev.pro/' rel='noreferrer' target='_blanc'>
           <span className='flex items-center justify-center drop-shadow-2xl'>

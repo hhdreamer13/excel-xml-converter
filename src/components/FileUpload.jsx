@@ -6,7 +6,9 @@ const FileUpload = ({ file, setFile, setConvertedFile, setErrorMessage }) => {
       if (fileExtension === "xlsx") {
         setFile(file);
       } else {
-        setErrorMessage("Veuillez télécharger un fichier Excel valide (.xlsx)");
+        setErrorMessage(
+          "Veuillez séléctionner un fichier Excel valide (.xlsx)"
+        );
         clearFile();
       }
     }

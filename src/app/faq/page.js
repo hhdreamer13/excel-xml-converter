@@ -9,12 +9,12 @@ export default function Home() {
     <div className='flex min-h-screen flex-col items-center justify-between p-0 sm:p-10'>
       <div className='z-10 max-w-5xl items-center justify-center w-fit mb-20'>
         <Link href='/'>
-          <h1 className='left-0 top-0 flex w-full justify-center font-bold text-5xl font-literata rounded-lg pb-6 pt-8 dark:from-inherit lg:w-auto lg:p-4'>
+          <h1 className='left-0 top-0 flex w-full justify-center font-bold text-2xl sm:text-5xl font-literata rounded-lg pb-6 pt-8 dark:from-inherit lg:w-auto lg:p-4'>
             Excel à Moodle XML
           </h1>
         </Link>
 
-        <p className='w-[30rem] mx-auto text-center font-semibold'>
+        <p className='w-80 sm:w-[30rem] mx-auto text-center font-semibold'>
           Bienvenue sur le convertisseur Excel à Moodle XML (QCM)
         </p>
       </div>
