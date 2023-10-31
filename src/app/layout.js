@@ -1,15 +1,7 @@
 import "./globals.css";
 import Navbar from "@/components/Navbar";
-import { Inter } from "next/font/google";
 import Footer from "@/components/Footer";
 import { GeistSans, GeistMono } from "geist/font";
-
-const inter = Inter({
-  weight: ["400", "700"],
-  style: ["normal"],
-  subsets: ["latin"],
-  display: "swap",
-});
 
 export const metadata = {
   title: "QCM Convertisseur - IPAG de Paris",

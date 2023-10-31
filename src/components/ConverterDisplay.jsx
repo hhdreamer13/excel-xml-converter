@@ -4,6 +4,8 @@ import { useState } from "react";
 import FileUpload from "./FileUpload";
 import ConvertButton from "./ConvertButton";
 import DownloadLink from "./DownloadLink";
+import TypeQcmRadio from "./TypeQcmRadio";
+import ExcelDownload from "./ExcelDownload";
 
 const ConverterDisplay = () => {
   const [file, setFile] = useState(null);
@@ -19,44 +21,51 @@ const ConverterDisplay = () => {
   };
 
   return (
-    <div className='flex flex-col gap-3 text-center border'>
-      <div className='w-fit mx-auto flex flex-col justify-center items-center border py-2 px-4 rounded-lg'>
-        <p className='label flex gap-2'>Type de QCM :</p>
-        <div className='form-control'>
-          <label className='label cursor-pointer'>
-            <span className='label-text'>3 choix de réponses</span>
-            <input
-              type='radio'
-              name='qcmType'
-              value='3'
-              checked={qcmType === "3"}
-              onChange={() => setQcmType("3")}
-              className='radio ml-2'
-            />
-          </label>
+    <div className='flex flex-col gap-3'>
+      <div className='flex gap-5'>
+        <div className=''>
+          <p className='font-bold'>
+            <span className='font-mono'>1.</span> Type de QCM :
+          </p>
+          <div className='w-60 h-28'>
+            <TypeQcmRadio qcmType={qcmType} setQcmType={setQcmType} />
+          </div>
         </div>
-        <div className='form-control'>
-          <label className='label cursor-pointer'>
-            <span className='label-text'>4 choix de réponses</span>
-            <input
-              type='radio'
-              name='qcmType'
-              value='4'
-              checked={qcmType === "4"}
-              onChange={() => setQcmType("4")}
-              className='radio ml-2'
-            />
-          </label>
+        <div className=''>
+          <p className='font-bold'>
+            <span className='font-mono'>2.</span> Modèle Excel :
+          </p>
+          <div className='w-60 h-28 '>
+            <ExcelDownload qcmType={qcmType} />
+          </div>
+        </div>
+        <div className=''>
+          <p className='font-bold'>
+            <span className='font-mono'>3.</span> Remplir le fichier :
+          </p>
+          <div className='w-60 h-28'>
+            <div className='flex flex-col h-full justify-center items-center border py-2 px-4 rounded-lg'>
+              <p className='text-sm label-text'>
+                Remplissez le fichier Excel avec vos questions, veuillez
+                respecter les consignes.
+              </p>
+            </div>
+          </div>
         </div>
       </div>
-
-      <div className='w-fit mx-auto border'>
+      <div className='mx-auto mt-5'>
+        <p className='font-bold text-center'>
+          <span className='font-mono'>4.</span> Déposez le fichier Excel
+          remplie.
+        </p>
         <FileUpload
           file={file}
           setFile={setFile}
           setConvertedFile={setConvertedFile}
           setErrorMessage={setErrorMessage}
         />
+      </div>
+      <div className='w-fit mx-auto'>
         <ConvertButton
           file={file}
           setConvertedFile={setConvertedFile}

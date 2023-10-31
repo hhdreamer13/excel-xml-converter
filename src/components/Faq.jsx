@@ -4,9 +4,7 @@ import Image from "next/image";
 const Faq = () => {
   return (
     <div className='flex flex-col'>
-      <h2 className='font-semibold text-xl m-4 underline'>
-        Foire Aux Questions
-      </h2>
+      <h2 className='font-bold text-xl m-4'>Foire Aux Questions</h2>
       <div className='join join-vertical w-full'>
         <div className='collapse collapse-arrow join-item border border-base-300'>
           <input type='checkbox' />

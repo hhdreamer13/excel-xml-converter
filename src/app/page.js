@@ -1,23 +1,17 @@
 /* eslint-disable react/no-unescaped-entities */
 import ConverterDisplay from "@/components/ConverterDisplay";
-import Footer from "@/components/Footer";
 import Link from "next/link";
 
 export default function Home() {
   return (
     <>
-      <div className='items-center justify-center w-full mb-20'>
-        <h1 className=' w-full mx-auto text-center justify-center font-bold text-2xl sm:text-5xl rounded-lg pb-6 pt-14 sm:pt-8'>
+      <div className='items-center justify-center w-full mb-10'>
+        <h1 className='w-full mx-auto text-center justify-center font-bold text-2xl sm:text-5xl rounded-lg pb-6 pt-14 sm:pt-8'>
           QCM Convertisseur
         </h1>
-        <p className='w-80 sm:w-[30rem] mx-auto text-center font-semibold'>
+        <p className='w-80 sm:w-[30rem] mx-auto text-center opacity-60'>
           Bienvenue sur le convertisseur Excel à Moodle XML (QCM)
         </p>
-        {/* <p className='w-80 sm:w-2/3 mx-auto text-center opacity-50'>
-          Commencez par télécharger le modèle Excel ci-dessous, remplissez-le
-          avec vos questions et réponses, puis téléversez-le ici pour obtenir
-          votre fichier Moodle XML.
-        </p> */}
       </div>
       <div className='isolate bg-white flex flex-col justify-center items-center'>
         <div
@@ -35,26 +29,7 @@ export default function Home() {
         <div className='mb-6'>
           <ConverterDisplay />
         </div>
-        <div className='mb-20 flex text-left mx-auto justify-center items-start gap-2 w-80 sm:max-w-5xl sm:w-full'>
-          <a
-            href='/qcm_modele.xlsx'
-            className='group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100'
-            target='_blank'
-            rel='noopener noreferrer'
-          >
-            <h2 className={`mb-3 text-lg sm:text-2xl font-semibold`}>
-              Modèle Excel{" "}
-              <span className='inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none'>
-                -&gt;
-              </span>
-            </h2>
-            <p
-              className={`m-0 max-w-[25ch] text-sm opacity-50 hidden sm:block`}
-            >
-              Téléchargez le fichier modèle Excel et remplissez avec vos
-              questions.
-            </p>
-          </a>
+        {/* <div className='mb-20 flex text-left mx-auto justify-center items-start gap-2 w-80 sm:max-w-5xl sm:w-full'>
           <Link
             href='/faq'
             className='group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100'
@@ -92,7 +67,7 @@ export default function Home() {
               converti dans Agorassas.
             </p>
           </a>
-        </div>
+        </div> */}
       </div>
     </>
   );
