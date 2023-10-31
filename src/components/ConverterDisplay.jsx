@@ -14,12 +14,6 @@ const ConverterDisplay = () => {
   const [convertedFile, setConvertedFile] = useState(null);
   const [qcmType, setQcmType] = useState("3");
 
-  const handleDownloadTemplate = () => {
-    const fileName =
-      qcmType === "3" ? "QCM_3_choices.xlsx" : "QCM_4_choices.xlsx";
-    window.location.href = `/public/${fileName}`;
-  };
-
   return (
     <div className='flex flex-col gap-3'>
       <div className='flex gap-5'>
@@ -44,7 +38,7 @@ const ConverterDisplay = () => {
             <span className='font-mono'>3.</span> Remplir le fichier :
           </p>
           <div className='w-60 h-28'>
-            <div className='flex flex-col h-full justify-center items-center border py-2 px-4 rounded-lg'>
+            <div className='flex flex-col h-full justify-center text-justify items-center border py-2 px-4 rounded-lg'>
               <p className='text-sm label-text'>
                 Remplissez le fichier Excel avec vos questions, veuillez
                 respecter les consignes.
@@ -68,6 +62,7 @@ const ConverterDisplay = () => {
       <div className='w-fit mx-auto'>
         <ConvertButton
           file={file}
+          qcmType={qcmType}
           setConvertedFile={setConvertedFile}
           setIsLoading={setIsLoading}
           setErrorMessage={setErrorMessage}
@@ -77,7 +72,7 @@ const ConverterDisplay = () => {
         {isLoading ? (
           <span className='loading loading-dots loading-lg'></span>
         ) : errorMessage ? (
-          <div className='text-red-500 w-96 mx-auto'>{errorMessage}</div>
+          <div className='text-red-500 w-full mx-auto'>{errorMessage}</div>
         ) : convertedFile ? (
           <DownloadLink convertedFile={convertedFile} />
         ) : (

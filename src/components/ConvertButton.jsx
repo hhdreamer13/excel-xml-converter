@@ -1,5 +1,6 @@
 const ConvertButton = ({
   file,
+  qcmType,
   setConvertedFile,
   setIsLoading,
   setErrorMessage,
@@ -10,6 +11,7 @@ const ConvertButton = ({
 
     const formData = new FormData();
     formData.append("excel_file", file);
+    formData.append("qcm_type", qcmType);
 
     const response = await fetch("/api/convert", {
       method: "POST",

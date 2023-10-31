@@ -2,7 +2,7 @@ const TypeQcmRadio = ({ qcmType, setQcmType }) => {
   return (
     <div className='flex flex-col h-full justify-center items-center border py-2 px-4 rounded-lg'>
       <div className=''>
-        <label className='label cursor-pointer'>
+        <label className='label cursor-pointer hover:drop-shadow-md transition-all'>
           <span className='label-text'>3 choix de réponses</span>
           <input
             type='radio'
@@ -15,7 +15,7 @@ const TypeQcmRadio = ({ qcmType, setQcmType }) => {
         </label>
       </div>
       <div className=''>
-        <label className='label cursor-pointer'>
+        <label className='label cursor-pointer hover:drop-shadow-md transition-all'>
           <span className='label-text'>4 choix de réponses</span>
           <input
             type='radio'

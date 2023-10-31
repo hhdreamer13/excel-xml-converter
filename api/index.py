@@ -12,10 +12,12 @@ def hello():
 @app.route('/api/convert', methods=['POST'])
 def convert():
     file = request.files['excel_file']
+    qcm_type = request.form['qcm_type']
+
     if file:
         try:
-            questions = lire_fichier_excel(BytesIO(file.read()))
-            xml_data = creer_fichier_moodle_xml(questions)
+            questions = lire_fichier_excel(BytesIO(file.read()), qcm_type)
+            xml_data = creer_fichier_moodle_xml(questions, qcm_type)
 
             mem = BytesIO()
             mem.write(xml_data)
@@ -30,7 +32,7 @@ def convert():
     
 
 
-def lire_fichier_excel(chemin):
+def lire_fichier_excel(chemin, qcm_type):
     df = pd.read_excel(chemin)
 
     questions = []
@@ -44,11 +46,16 @@ def lire_fichier_excel(chemin):
             },
             'bonneReponse': str(row['bonneReponse (A, B ou C)']),
         }
+
+
+        if qcm_type == '4':
+            question['reponses']['D'] = str(row['reponseD'])
+
         questions.append(question)
 
     return questions
 
-def creer_question_xml(question, question_num):
+def creer_question_xml(question, question_num, qcm_type):
 
     
     # Créer l'élément question
@@ -83,9 +90,11 @@ def creer_question_xml(question, question_num):
     ET.SubElement(ET.SubElement(question_xml, 'incorrectfeedback', format='html'), 'text').text = 'Votre réponse est incorrecte.'
     ET.SubElement(question_xml, 'shownumcorrect')
 
+    incorrect_fraction = '-50' if qcm_type == '3' else '-33.33'
+
     # Ajouter les réponses
     for lettre, reponse in question['reponses'].items():
-        fraction = '100' if lettre == question['bonneReponse'] else '-50'
+        fraction = '100' if lettre == question['bonneReponse'] else incorrect_fraction
         answer = ET.SubElement(question_xml, 'answer', fraction=fraction, format='html')
         text = ET.SubElement(answer, 'text')
         # text.text = '<![CDATA[<p dir="ltr" style="text-align: left;">' + reponse + '<br></p>]]>'
@@ -95,10 +104,10 @@ def creer_question_xml(question, question_num):
     return question_xml
 
 
-def creer_fichier_moodle_xml(questions):
+def creer_fichier_moodle_xml(questions, qcm_type):
     quiz = ET.Element('quiz')
     for i, question in enumerate(questions, start=1):
-        question_xml = creer_question_xml(question, i)
+        question_xml = creer_question_xml(question, i, qcm_type)
         quiz.append(question_xml)
 
     return ET.tostring(quiz, encoding='utf-8', method='xml')

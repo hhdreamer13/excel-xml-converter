@@ -1,50 +1,39 @@
 const ExcelDownload = ({ qcmType }) => {
   return (
     <a
-      href='/qcm_modele.xlsx'
+      href={`/qcm_modele_${qcmType}choix.xlsx`}
       target='_blank'
       rel='noopener noreferrer'
-      className='group flex relative flex-col h-full justify-center items-center border py-2 px-4 rounded-lg'
+      className='flex relative flex-col h-full justify-center items-center border py-2 px-4 rounded-lg hover:drop-shadow-md transition-all'
     >
-      <p className='text-sm label-text'>
-        Téléchargez le fichier modèle Excel de{" "}
-        <span className='font-semibold px-2 py-1 bg-green-200 rounded-full'>
-          {qcmType} choix de réponse
+      <p className='text-sm label-text text-justify'>
+        Téléchargez le fichier modèle Excel avec{" "}
+        <span className=''>
+          <span className='font-semibold px-2 py-1  bg-green-200 rounded-full'>
+            {qcmType}
+          </span>{" "}
+          choix de réponses.
         </span>
       </p>
       <svg
         viewBox='0 0 24 24'
         fill='none'
         xmlns='http://www.w3.org/2000/svg'
-        className='w-5 h-5 absolute top-1 right-1 group-hover:scale-110 transition'
+        className='w-6 h-6 absolute top-0 right-0'
       >
-        <g id='SVGRepo_bgCarrier' stroke-width='0'></g>
+        <g id='SVGRepo_bgCarrier' strokeWidth='0'></g>
         <g
           id='SVGRepo_tracerCarrier'
-          stroke-linecap='round'
-          stroke-linejoin='round'
+          strokeLinecap='round'
+          strokeLinejoin='round'
         ></g>
         <g id='SVGRepo_iconCarrier'>
-          {" "}
           <path
-            d='M12 7L12 14M12 14L15 11M12 14L9 11'
-            stroke='#000000'
-            stroke-width='1.5'
-            stroke-linecap='round'
-            stroke-linejoin='round'
-          ></path>{" "}
-          <path
-            d='M16 17H12H8'
-            stroke='#000000'
-            stroke-width='1.5'
-            stroke-linecap='round'
-          ></path>{" "}
-          <path
-            opacity='0.5'
-            d='M2 12C2 7.28595 2 4.92893 3.46447 3.46447C4.92893 2 7.28595 2 12 2C16.714 2 19.0711 2 20.5355 3.46447C22 4.92893 22 7.28595 22 12C22 16.714 22 19.0711 20.5355 20.5355C19.0711 22 16.714 22 12 22C7.28595 22 4.92893 22 3.46447 20.5355C2 19.0711 2 16.714 2 12Z'
-            stroke='#000000'
-            stroke-width='1.5'
-          ></path>{" "}
+            d='M12 12V19M12 19L9.75 16.6667M12 19L14.25 16.6667M6.6 17.8333C4.61178 17.8333 3 16.1917 3 14.1667C3 12.498 4.09438 11.0897 5.59198 10.6457C5.65562 10.6268 5.7 10.5675 5.7 10.5C5.7 7.46243 8.11766 5 11.1 5C14.0823 5 16.5 7.46243 16.5 10.5C16.5 10.5582 16.5536 10.6014 16.6094 10.5887C16.8638 10.5306 17.1284 10.5 17.4 10.5C19.3882 10.5 21 12.1416 21 14.1667C21 16.1917 19.3882 17.8333 17.4 17.8333'
+            stroke='#464455'
+            strokeLinecap='round'
+            strokeLinejoin='round'
+          ></path>
         </g>
       </svg>
     </a>
