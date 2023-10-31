@@ -1,33 +1,32 @@
-import { Inter, Caveat, Expletus_Sans } from "next/font/google";
-
 import "./globals.css";
+import Navbar from "@/components/Navbar";
+import { Inter } from "next/font/google";
+import Footer from "@/components/Footer";
+import { GeistSans, GeistMono } from "geist/font";
 
-const inter = Inter({ subsets: ["latin"] });
-
-const caveatFont = Caveat({
+const inter = Inter({
+  weight: ["400", "700"],
+  style: ["normal"],
   subsets: ["latin"],
   display: "swap",
-  variable: "--font-caveat",
-});
-
-const literataFont = Expletus_Sans({
-  subsets: ["latin"],
-  display: "swap",
-  variable: "--font-literata",
 });
 
 export const metadata = {
-  title: "Excel à Moodle XML",
-  description: "Créé par Hooman",
+  title: "QCM Convertisseur - IPAG de Paris",
+  description: "QCM Convertisseur",
 };
 
 export default function RootLayout({ children }) {
   return (
-    <html lang='en'>
-      <body
-        className={`${caveatFont.variable} ${literataFont.variable}  ${inter.className}`}
-      >
-        {children}
+    <html lang='fr'>
+      <body className={GeistSans.className}>
+        <main className='flex flex-col min-h-screen'>
+          <div className='flex-grow bg-white pt-10 sm:pt-16'>
+            <Navbar />
+            {children}
+          </div>
+          <Footer />
+        </main>
       </body>
     </html>
   );
