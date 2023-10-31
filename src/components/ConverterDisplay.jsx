@@ -24,7 +24,7 @@ const ConverterDisplay = () => {
     <div className='flex flex-col gap-3'>
       <div className='flex gap-5'>
         <div className=''>
-          <p className='font-bold'>
+          <p className='font-semibold'>
             <span className='font-mono'>1.</span> Type de QCM :
           </p>
           <div className='w-60 h-28'>
@@ -32,7 +32,7 @@ const ConverterDisplay = () => {
           </div>
         </div>
         <div className=''>
-          <p className='font-bold'>
+          <p className='font-semibold'>
             <span className='font-mono'>2.</span> Modèle Excel :
           </p>
           <div className='w-60 h-28 '>
@@ -40,7 +40,7 @@ const ConverterDisplay = () => {
           </div>
         </div>
         <div className=''>
-          <p className='font-bold'>
+          <p className='font-semibold'>
             <span className='font-mono'>3.</span> Remplir le fichier :
           </p>
           <div className='w-60 h-28'>
@@ -54,7 +54,7 @@ const ConverterDisplay = () => {
         </div>
       </div>
       <div className='mx-auto mt-5'>
-        <p className='font-bold text-center'>
+        <p className='font-semibold text-center'>
           <span className='font-mono'>4.</span> Déposez le fichier Excel
           remplie.
         </p>

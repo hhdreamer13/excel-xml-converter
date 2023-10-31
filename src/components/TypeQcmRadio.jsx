@@ -10,7 +10,7 @@ const TypeQcmRadio = ({ qcmType, setQcmType }) => {
             value='3'
             checked={qcmType === "3"}
             onChange={() => setQcmType("3")}
-            className='radio ml-2'
+            className='radio ml-2 checked:bg-teal-500'
           />
         </label>
       </div>
@@ -23,7 +23,7 @@ const TypeQcmRadio = ({ qcmType, setQcmType }) => {
             value='4'
             checked={qcmType === "4"}
             onChange={() => setQcmType("4")}
-            className='radio ml-2'
+            className='radio ml-2 checked:bg-teal-500'
           />
         </label>
       </div>
