@@ -79,7 +79,7 @@ def creer_question_xml(question, question_num, qcm_type, penalty):
     # Ajouter generalfeedback, defaultgrade, penalty, hidden, idnumber, single, shuffleanswers
     ET.SubElement(ET.SubElement(question_xml, 'generalfeedback', format='html'), 'text')
     ET.SubElement(question_xml, 'defaultgrade').text = '1'
-    ET.SubElement(question_xml, 'penalty').text = penalty
+    ET.SubElement(question_xml, 'penalty').text = '33.33333'
     ET.SubElement(question_xml, 'hidden').text = '0'
     ET.SubElement(question_xml, 'idnumber')
     ET.SubElement(question_xml, 'single').text = 'true'
@@ -91,11 +91,9 @@ def creer_question_xml(question, question_num, qcm_type, penalty):
     ET.SubElement(ET.SubElement(question_xml, 'incorrectfeedback', format='html'), 'text').text = 'Votre réponse est incorrecte.'
     ET.SubElement(question_xml, 'shownumcorrect')
 
-    incorrect_fraction = '-50' if qcm_type == '3' else '-33.33333'
-
     # Ajouter les réponses
     for lettre, reponse in question['reponses'].items():
-        fraction = '100' if lettre == question['bonneReponse'] else incorrect_fraction
+        fraction = '100' if lettre == question['bonneReponse'] else str(float(penalty) * -1)
         answer = ET.SubElement(question_xml, 'answer', fraction=fraction, format='html')
         text = ET.SubElement(answer, 'text')
         # text.text = '<![CDATA[<p dir="ltr" style="text-align: left;">' + reponse + '<br></p>]]>'

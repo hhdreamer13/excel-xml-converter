@@ -13,7 +13,7 @@ const ConverterDisplay = () => {
   const [errorMessage, setErrorMessage] = useState(null);
   const [convertedFile, setConvertedFile] = useState(null);
   const [qcmType, setQcmType] = useState(null);
-  const [penalty, setPenalty] = useState(0);
+  const [penalty, setPenalty] = useState(0.5);
 
   return (
     <div className='flex flex-col gap-3'>
