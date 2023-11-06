@@ -91,6 +91,8 @@ def creer_question_xml(question, question_num, qcm_type, penalty):
     ET.SubElement(ET.SubElement(question_xml, 'incorrectfeedback', format='html'), 'text').text = 'Votre réponse est incorrecte.'
     ET.SubElement(question_xml, 'shownumcorrect')
 
+    # incorrect_fraction = '-50' if qcm_type == '3' else '-33.33'
+
     if penalty == '0':
         incorrect_fraction = '0'
     elif penalty == '0.5':

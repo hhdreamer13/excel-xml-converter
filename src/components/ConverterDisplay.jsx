@@ -56,8 +56,7 @@ const ConverterDisplay = () => {
       </div>
       <div className='mx-auto mt-5'>
         <p className='font-semibold text-center'>
-          <span className='font-mono'>4.</span> Déposez le fichier Excel
-          remplie.
+          <span className='font-mono'>4.</span> Déposez le fichier Excel rempli.
         </p>
         <FileUpload
           file={file}
