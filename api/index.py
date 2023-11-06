@@ -13,7 +13,7 @@ def hello():
 def convert():
     file = request.files['excel_file']
     qcm_type = request.form['qcm_type']
-    penalty = request.form('penalty')
+    penalty = request.form['penalty']
 
     if file:
         try:
