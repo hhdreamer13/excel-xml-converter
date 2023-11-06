@@ -9,12 +9,14 @@ const Faq = () => {
         <div className='collapse collapse-arrow join-item border border-base-300'>
           <input type='checkbox' />
           <div className='collapse-title text-xl font-medium'>
-            Qu'est-ce que ce site fait ?
+            Quelle est la fonction de ce site ?
           </div>
           <div className='collapse-content opacity-60'>
             <p>
-              Cette web app convertit vos fichiers Excel contenant des questions
-              à choix multiples (QCM) en fichiers XML compatibles avec Moodle.
+              Cette application web permet de convertir vos fichiers Excel,
+              contenant des questions à choix multiples (QCM), en fichiers XML.
+              Ces fichiers XML sont ensuite compatibles avec la plateforme
+              Moodle, facilitant ainsi leur intégration sur Agorassas
             </p>
           </div>
         </div>
@@ -22,37 +24,47 @@ const Faq = () => {
         <div className='collapse collapse-arrow join-item border border-base-300'>
           <input type='checkbox' />
           <div className='collapse-title text-xl font-medium'>
-            Comment ça marche ?
+            Quelles sont les étapes pour utiliser ce site ?
           </div>
           <div className='collapse-content opacity-60'>
             <ol className='list-decimal	ml-4 flex flex-col gap-3'>
               <li>
                 <span className='font-bold block'>
-                  Télécharger le modèle Excel :
+                  Choisissez le type de QCM :
                 </span>{" "}
-                Utilisez le{" "}
-                <a
-                  href='/qcm_modele.xlsx'
-                  download
-                  className='text-green-600 hover:text-green-500'
-                >
-                  modèle Excel
-                </a>{" "}
-                pour créer votre QCM.
+                Sélectionnez si votre QCM aura 3 ou 4 choix de réponses. Vous
+                pouvez également définir une pénalité pour chaque mauvaise
+                réponse, de 0 à 1 point, ajustable par incréments de 0.5.
               </li>
               <li>
-                <span className='font-bold block'>Remplir le modèle :</span>{" "}
-                Saisissez vos questions et réponses dans les colonnes
-                appropriées.
+                <span className='font-bold block'>
+                  Téléchargez le modèle Excel :
+                </span>{" "}
+                Téléchargez le modèle Excel correspondant à votre type de QCM.
+                Si vous choisissez un QCM avec pénalité, le modèle intégrera
+                cette information.
               </li>
               <li>
-                <span className='font-bold block'>Parcourir le fichier :</span>{" "}
-                Déposez le fichier Excel rempli sur le site.
+                <span className='font-bold block'>
+                  Remplissez le fichier Excel :
+                </span>{" "}
+                Entrez vos questions, les options de réponses, et indiquez la
+                bonne réponse dans le modèle téléchargé, en suivant les
+                instructions.
               </li>
               <li>
-                <span className='font-bold block'>Conversion :</span> Cliquez
-                sur "Convertir le fichier" et attendez la fin du processus de
-                conversion.{" "}
+                <span className='font-bold block'>
+                  Déposez le fichier Excel rempli :
+                </span>{" "}
+                Glissez et déposez le fichier Excel complété sur le site web
+                pour initier la conversion.
+              </li>
+              <li>
+                <span className='font-bold block'>
+                  Convertissez le fichier :
+                </span>{" "}
+                Cliquez sur le bouton "Convertir le fichier" et attendez que le
+                processus de conversion soit terminé.
               </li>
               <li>
                 <span className='font-bold block'>
@@ -73,19 +85,12 @@ const Faq = () => {
           <div className='collapse-content opacity-60'>
             <p>
               Si vous avez déjà un QCM dans un format autre qu'Excel, il
-              faudrait copier-coller les questions et les réponses dans le{" "}
-              <a
-                href='/qcm_modele.xlsx'
-                download
-                className='text-green-600 hover:text-green-500'
-              >
-                modèle Excel
-              </a>
-              .
+              faudrait copier-coller les questions et les réponses dans le
+              modèle Excel .
             </p>
           </div>
         </div>
-        <div className='collapse collapse-arrow join-item border border-base-300'>
+        {/* <div className='collapse collapse-arrow join-item border border-base-300'>
           <input type='checkbox' />
           <div className='collapse-title text-xl font-medium'>
             Y a-t-il des limitations à connaître ?
@@ -99,7 +104,7 @@ const Faq = () => {
               troisième choix apparaîtra vide lors du test.
             </p>
           </div>
-        </div>
+        </div> */}
         <div className='collapse collapse-arrow join-item border border-base-300'>
           <input type='checkbox' />
           <div className='collapse-title text-xl font-medium'>
