@@ -1,4 +1,5 @@
-const ExcelDownload = ({ qcmType }) => {
+/* eslint-disable react/no-unescaped-entities */
+const ExcelDownload = ({ qcmType, penalty }) => {
   return (
     <a
       href={`/qcm_modele_${qcmType}choix.xlsx`}
@@ -6,16 +7,38 @@ const ExcelDownload = ({ qcmType }) => {
       rel='noopener noreferrer'
       title='Téléchargez le fichier'
       className='flex relative flex-col h-full justify-center items-center border py-2 px-4 rounded-lg transition-all hover:bg-slate-100 hover:shadow-md'
+      onClick={(e) => {
+        if (!qcmType) {
+          e.preventDefault();
+        }
+      }}
     >
-      <p className='text-sm label-text text-justify'>
-        Téléchargez le fichier modèle Excel avec{" "}
-        <span className=''>
-          <span className='font-semibold px-2 py-1 bg-accent bg-opacity-60 rounded-full'>
+      {qcmType ? (
+        <p className='text-sm label-text text-justify'>
+          Cliquez ici pour télécharger le modèle Excel pour un QCM à{" "}
+          <span className='font-semibold p-1 text-accent bg-opacity-60 rounded-full'>
             {qcmType}
           </span>{" "}
-          choix de réponses.
-        </span>
-      </p>
+          choix de réponses,{" "}
+          {penalty !== "0" && penalty ? (
+            <span>
+              avec une pénalité de{" "}
+              <span className='font-semibold text-error leading-relaxed'>
+                {penalty}
+              </span>{" "}
+              point pour chaque réponse incorrecte.
+            </span>
+          ) : (
+            " sans pénalité pour les réponses incorrectes."
+          )}
+        </p>
+      ) : (
+        <p className='text-sm label-text text-justify'>
+          Pour télécharger le modèle Excel, sélectionnez d'abord le type de
+          votre QCM.
+        </p>
+      )}
+
       <svg
         viewBox='0 0 24 24'
         fill='none'

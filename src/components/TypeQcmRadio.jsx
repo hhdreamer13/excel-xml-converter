@@ -8,6 +8,7 @@ const TypeQcmRadio = ({ qcmType, setQcmType, penalty, setPenalty }) => {
             type='radio'
             name='qcmType'
             value='3'
+            required
             checked={qcmType === "3"}
             onChange={() => setQcmType("3")}
             className='radio ml-2 radio-accent w-5 h-5'
@@ -21,6 +22,7 @@ const TypeQcmRadio = ({ qcmType, setQcmType, penalty, setPenalty }) => {
             type='radio'
             name='qcmType'
             value='4'
+            required
             checked={qcmType === "4"}
             onChange={() => setQcmType("4")}
             className='radio ml-2 radio-accent w-5 h-5'
@@ -30,7 +32,7 @@ const TypeQcmRadio = ({ qcmType, setQcmType, penalty, setPenalty }) => {
       <div className='mt-2 border-t'>
         <label className='label cursor-pointer hover:drop-shadow-md transition-all'>
           <span className='label-text'>
-            Pénalité pour chaque mauvaise réponse
+            Pénalité pour chaque mauvaise réponse :
           </span>
           <div className='flex flex-col items-center justify-center gap-1'>
             <span className='label-text'>{penalty}</span>
@@ -42,7 +44,7 @@ const TypeQcmRadio = ({ qcmType, setQcmType, penalty, setPenalty }) => {
               step='0.5'
               value={penalty}
               onChange={(e) => setPenalty(e.target.value)}
-              className='range range-xs w-10 range-accent'
+              className='range range-xs w-10 range-error'
             />
           </div>
         </label>

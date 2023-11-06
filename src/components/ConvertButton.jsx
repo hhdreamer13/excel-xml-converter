@@ -9,6 +9,9 @@ const ConvertButton = ({
   const handleConvert = async () => {
     setIsLoading(true);
     setErrorMessage(null); // Clear any existing error messages
+    if (!qcmType) {
+      setErrorMessage("Veuillez séléctionnez le type de votre QCM !");
+    }
 
     const formData = new FormData();
     formData.append("excel_file", file);

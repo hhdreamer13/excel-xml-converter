@@ -12,8 +12,8 @@ const ConverterDisplay = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [errorMessage, setErrorMessage] = useState(null);
   const [convertedFile, setConvertedFile] = useState(null);
+  const [qcmType, setQcmType] = useState(null);
   const [penalty, setPenalty] = useState(0);
-  const [qcmType, setQcmType] = useState("3");
 
   return (
     <div className='flex flex-col gap-3'>
@@ -36,7 +36,7 @@ const ConverterDisplay = () => {
             <span className='font-mono'>2.</span> Modèle Excel :
           </p>
           <div className='w-60 h-40 '>
-            <ExcelDownload qcmType={qcmType} />
+            <ExcelDownload qcmType={qcmType} penalty={penalty} />
           </div>
         </div>
         <div className=''>
@@ -81,7 +81,7 @@ const ConverterDisplay = () => {
         ) : errorMessage ? (
           <div className='text-red-500 w-full mx-auto'>{errorMessage}</div>
         ) : convertedFile ? (
-          <DownloadLink convertedFile={convertedFile} />
+          <DownloadLink convertedFile={convertedFile} qcmType={qcmType} />
         ) : (
           <div className='placeholder'></div>
         )}

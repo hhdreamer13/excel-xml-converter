@@ -1,4 +1,4 @@
-const DownloadLink = ({ convertedFile }) => {
+const DownloadLink = ({ convertedFile, qcmType }) => {
   if (convertedFile instanceof Blob) {
     const url = URL.createObjectURL(convertedFile);
     return (
@@ -7,7 +7,7 @@ const DownloadLink = ({ convertedFile }) => {
         download='fichier_converti.xml'
         className='btn btn-link text-sky-500 hover:text-sky-600 text-lg normal-case'
       >
-        Télécharger le fichier converti
+        Télécharger le fichier QCM à {qcmType} choix converti
       </a>
     );
   }
