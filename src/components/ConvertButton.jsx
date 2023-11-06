@@ -4,6 +4,7 @@ const ConvertButton = ({
   setConvertedFile,
   setIsLoading,
   setErrorMessage,
+  penalty,
 }) => {
   const handleConvert = async () => {
     setIsLoading(true);
@@ -12,6 +13,7 @@ const ConvertButton = ({
     const formData = new FormData();
     formData.append("excel_file", file);
     formData.append("qcm_type", qcmType);
+    formData.append("penalty", penalty);
 
     const response = await fetch("/api/convert", {
       method: "POST",

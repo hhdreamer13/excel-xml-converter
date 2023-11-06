@@ -13,11 +13,12 @@ def hello():
 def convert():
     file = request.files['excel_file']
     qcm_type = request.form['qcm_type']
+    penalty = request.form('penalty')
 
     if file:
         try:
             questions = lire_fichier_excel(BytesIO(file.read()), qcm_type)
-            xml_data = creer_fichier_moodle_xml(questions, qcm_type)
+            xml_data = creer_fichier_moodle_xml(questions, qcm_type, penalty)
 
             mem = BytesIO()
             mem.write(xml_data)
@@ -55,7 +56,7 @@ def lire_fichier_excel(chemin, qcm_type):
 
     return questions
 
-def creer_question_xml(question, question_num, qcm_type):
+def creer_question_xml(question, question_num, qcm_type, penalty):
 
     
     # Créer l'élément question
@@ -78,7 +79,7 @@ def creer_question_xml(question, question_num, qcm_type):
     # Ajouter generalfeedback, defaultgrade, penalty, hidden, idnumber, single, shuffleanswers
     ET.SubElement(ET.SubElement(question_xml, 'generalfeedback', format='html'), 'text')
     ET.SubElement(question_xml, 'defaultgrade').text = '1'
-    ET.SubElement(question_xml, 'penalty').text = '0.5'
+    ET.SubElement(question_xml, 'penalty').text = penalty
     ET.SubElement(question_xml, 'hidden').text = '0'
     ET.SubElement(question_xml, 'idnumber')
     ET.SubElement(question_xml, 'single').text = 'true'
@@ -104,10 +105,10 @@ def creer_question_xml(question, question_num, qcm_type):
     return question_xml
 
 
-def creer_fichier_moodle_xml(questions, qcm_type):
+def creer_fichier_moodle_xml(questions, qcm_type, penalty):
     quiz = ET.Element('quiz')
     for i, question in enumerate(questions, start=1):
-        question_xml = creer_question_xml(question, i, qcm_type)
+        question_xml = creer_question_xml(question, i, qcm_type, penalty)
         quiz.append(question_xml)
 
     return ET.tostring(quiz, encoding='utf-8', method='xml')

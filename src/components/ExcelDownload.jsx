@@ -4,12 +4,13 @@ const ExcelDownload = ({ qcmType }) => {
       href={`/qcm_modele_${qcmType}choix.xlsx`}
       target='_blank'
       rel='noopener noreferrer'
-      className='flex relative flex-col h-full justify-center items-center border py-2 px-4 rounded-lg hover:drop-shadow-md transition-all'
+      title='Téléchargez le fichier'
+      className='flex relative flex-col h-full justify-center items-center border py-2 px-4 rounded-lg transition-all hover:bg-slate-100 hover:shadow-md'
     >
       <p className='text-sm label-text text-justify'>
         Téléchargez le fichier modèle Excel avec{" "}
         <span className=''>
-          <span className='font-semibold px-2 py-1  bg-green-200 rounded-full'>
+          <span className='font-semibold px-2 py-1 bg-accent bg-opacity-60 rounded-full'>
             {qcmType}
           </span>{" "}
           choix de réponses.

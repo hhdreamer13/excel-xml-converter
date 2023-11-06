@@ -12,6 +12,7 @@ const ConverterDisplay = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [errorMessage, setErrorMessage] = useState(null);
   const [convertedFile, setConvertedFile] = useState(null);
+  const [penalty, setPenalty] = useState(0);
   const [qcmType, setQcmType] = useState("3");
 
   return (
@@ -21,15 +22,20 @@ const ConverterDisplay = () => {
           <p className='font-semibold'>
             <span className='font-mono'>1.</span> Type de QCM :
           </p>
-          <div className='w-60 h-28'>
-            <TypeQcmRadio qcmType={qcmType} setQcmType={setQcmType} />
+          <div className='w-60 h-40'>
+            <TypeQcmRadio
+              qcmType={qcmType}
+              setQcmType={setQcmType}
+              penalty={penalty}
+              setPenalty={setPenalty}
+            />
           </div>
         </div>
         <div className=''>
           <p className='font-semibold'>
             <span className='font-mono'>2.</span> Modèle Excel :
           </p>
-          <div className='w-60 h-28 '>
+          <div className='w-60 h-40 '>
             <ExcelDownload qcmType={qcmType} />
           </div>
         </div>
@@ -37,7 +43,7 @@ const ConverterDisplay = () => {
           <p className='font-semibold'>
             <span className='font-mono'>3.</span> Remplir le fichier :
           </p>
-          <div className='w-60 h-28'>
+          <div className='w-60 h-40'>
             <div className='flex flex-col h-full justify-center text-justify items-center border py-2 px-4 rounded-lg'>
               <p className='text-sm label-text'>
                 Remplissez le fichier Excel avec vos questions, veuillez
@@ -66,6 +72,7 @@ const ConverterDisplay = () => {
           setConvertedFile={setConvertedFile}
           setIsLoading={setIsLoading}
           setErrorMessage={setErrorMessage}
+          penalty={penalty}
         />
       </div>
       <div className='w-fit mx-auto'>
