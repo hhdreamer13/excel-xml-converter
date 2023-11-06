@@ -14,7 +14,7 @@ export default function Home() {
         </Link>
 
         <p className='w-80 sm:w-[30rem] mx-auto text-center opacity-50'>
-          Bienvenue sur le convertisseur Excel à Moodle XML (QCM)
+          Bienvenue sur le convertisseur Excel à XML Moodle (QCM)
         </p>
       </div>
       <div className='isolate bg-white flex flex-col justify-center items-center'>

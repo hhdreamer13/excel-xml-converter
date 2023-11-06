@@ -1,11 +1,12 @@
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { GeistSans, GeistMono } from "geist/font";
+import { GeistSans } from "geist/font";
 
 export const metadata = {
   title: "QCM Convertisseur - IPAG de Paris",
-  description: "QCM Convertisseur",
+  description:
+    "Convertissez vos fichiers Excel en format QCM XML adapté pour Agorassas.",
 };
 
 export default function RootLayout({ children }) {

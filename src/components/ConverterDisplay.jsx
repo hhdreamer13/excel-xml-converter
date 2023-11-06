@@ -46,8 +46,9 @@ const ConverterDisplay = () => {
           <div className='w-60 h-40'>
             <div className='flex flex-col h-full justify-center text-justify items-center border py-2 px-4 rounded-lg'>
               <p className='text-sm label-text'>
-                Remplissez le fichier Excel avec vos questions, veuillez
-                respecter les consignes.
+                Remplissez le fichier Excel avec vos questions, les options de
+                réponses et indiquez la bonne réponse, tout en respectant les
+                consignes.
               </p>
             </div>
           </div>
