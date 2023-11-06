@@ -91,9 +91,16 @@ def creer_question_xml(question, question_num, qcm_type, penalty):
     ET.SubElement(ET.SubElement(question_xml, 'incorrectfeedback', format='html'), 'text').text = 'Votre réponse est incorrecte.'
     ET.SubElement(question_xml, 'shownumcorrect')
 
+    if penalty == '0':
+        incorrect_fraction = '0'
+    elif penalty == '0.5':
+        incorrect_fraction = '-50'
+    elif penalty == '1':
+        incorrect_fraction = '-100'
+
     # Ajouter les réponses
     for lettre, reponse in question['reponses'].items():
-        fraction = '100' if lettre == question['bonneReponse'] else str(float(penalty) * -1)
+        fraction = '100' if lettre == question['bonneReponse'] else incorrect_fraction
         answer = ET.SubElement(question_xml, 'answer', fraction=fraction, format='html')
         text = ET.SubElement(answer, 'text')
         # text.text = '<![CDATA[<p dir="ltr" style="text-align: left;">' + reponse + '<br></p>]]>'
